@@ -1,0 +1,620 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Vulnerability Scanner",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "name": "Trivy",
+          "rules": [
+            {
+              "id": "CVE-2024-56201",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "jinja2: Jinja has a sandbox breakout through malicious filenames"
+              },
+              "fullDescription": {
+                "text": "Jinja is an extensible templating engine. In versions on the 3.x branch prior to 3.1.5, a bug in the Jinja compiler allows an attacker that controls both the content and filename of a template to execute arbitrary Python code, regardless of if Jinja's sandbox is used. To exploit the vulnerability, an attacker needs to control both the filename and the contents of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates where the template author can also choose the template filename. This vulnerability is fixed in 3.1.5."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-56201",
+              "help": {
+                "text": "Vulnerability CVE-2024-56201\nSeverity: MEDIUM\nPackage: jinja2\nFixed Version: 3.1.5\nLink: [CVE-2024-56201](https://avd.aquasec.com/nvd/cve-2024-56201)\nJinja is an extensible templating engine. In versions on the 3.x branch prior to 3.1.5, a bug in the Jinja compiler allows an attacker that controls both the content and filename of a template to execute arbitrary Python code, regardless of if Jinja's sandbox is used. To exploit the vulnerability, an attacker needs to control both the filename and the contents of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates where the template author can also choose the template filename. This vulnerability is fixed in 3.1.5.",
+                "markdown": "**Vulnerability CVE-2024-56201**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|jinja2|3.1.5|[CVE-2024-56201](https://avd.aquasec.com/nvd/cve-2024-56201)|\n\nJinja is an extensible templating engine. In versions on the 3.x branch prior to 3.1.5, a bug in the Jinja compiler allows an attacker that controls both the content and filename of a template to execute arbitrary Python code, regardless of if Jinja's sandbox is used. To exploit the vulnerability, an attacker needs to control both the filename and the contents of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates where the template author can also choose the template filename. This vulnerability is fixed in 3.1.5."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-56326",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "jinja2: Jinja has a sandbox breakout through indirect reference to format method"
+              },
+              "fullDescription": {
+                "text": "Jinja is an extensible templating engine. Prior to 3.1.5, An oversight in how the Jinja sandboxed environment detects calls to str.format allows an attacker that controls the content of a template to execute arbitrary Python code. To exploit the vulnerability, an attacker needs to control the content of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates. Jinja's sandbox does catch calls to str.format and ensures they don't escape the sandbox. However, it's possible to store a reference to a malicious string's format method, then pass that to a filter that calls it. No such filters are built-in to Jinja, but could be present through custom filters in an application. After the fix, such indirect calls are also handled by the sandbox. This vulnerability is fixed in 3.1.5."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-56326",
+              "help": {
+                "text": "Vulnerability CVE-2024-56326\nSeverity: MEDIUM\nPackage: jinja2\nFixed Version: 3.1.5\nLink: [CVE-2024-56326](https://avd.aquasec.com/nvd/cve-2024-56326)\nJinja is an extensible templating engine. Prior to 3.1.5, An oversight in how the Jinja sandboxed environment detects calls to str.format allows an attacker that controls the content of a template to execute arbitrary Python code. To exploit the vulnerability, an attacker needs to control the content of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates. Jinja's sandbox does catch calls to str.format and ensures they don't escape the sandbox. However, it's possible to store a reference to a malicious string's format method, then pass that to a filter that calls it. No such filters are built-in to Jinja, but could be present through custom filters in an application. After the fix, such indirect calls are also handled by the sandbox. This vulnerability is fixed in 3.1.5.",
+                "markdown": "**Vulnerability CVE-2024-56326**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|jinja2|3.1.5|[CVE-2024-56326](https://avd.aquasec.com/nvd/cve-2024-56326)|\n\nJinja is an extensible templating engine. Prior to 3.1.5, An oversight in how the Jinja sandboxed environment detects calls to str.format allows an attacker that controls the content of a template to execute arbitrary Python code. To exploit the vulnerability, an attacker needs to control the content of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates. Jinja's sandbox does catch calls to str.format and ensures they don't escape the sandbox. However, it's possible to store a reference to a malicious string's format method, then pass that to a filter that calls it. No such filters are built-in to Jinja, but could be present through custom filters in an application. After the fix, such indirect calls are also handled by the sandbox. This vulnerability is fixed in 3.1.5."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "7.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-27516",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "jinja2: Jinja sandbox breakout through attr filter selecting format method"
+              },
+              "fullDescription": {
+                "text": "Jinja is an extensible templating engine. Prior to 3.1.6, an oversight in how the Jinja sandboxed environment interacts with the |attr filter allows an attacker that controls the content of a template to execute arbitrary Python code. To exploit the vulnerability, an attacker needs to control the content of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates. Jinja's sandbox does catch calls to str.format and ensures they don't escape the sandbox. However, it's possible to use the |attr filter to get a reference to a string's plain format method, bypassing the sandbox. After the fix, the |attr filter no longer bypasses the environment's attribute lookup. This vulnerability is fixed in 3.1.6."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-27516",
+              "help": {
+                "text": "Vulnerability CVE-2025-27516\nSeverity: MEDIUM\nPackage: jinja2\nFixed Version: 3.1.6\nLink: [CVE-2025-27516](https://avd.aquasec.com/nvd/cve-2025-27516)\nJinja is an extensible templating engine. Prior to 3.1.6, an oversight in how the Jinja sandboxed environment interacts with the |attr filter allows an attacker that controls the content of a template to execute arbitrary Python code. To exploit the vulnerability, an attacker needs to control the content of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates. Jinja's sandbox does catch calls to str.format and ensures they don't escape the sandbox. However, it's possible to use the |attr filter to get a reference to a string's plain format method, bypassing the sandbox. After the fix, the |attr filter no longer bypasses the environment's attribute lookup. This vulnerability is fixed in 3.1.6.",
+                "markdown": "**Vulnerability CVE-2025-27516**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|jinja2|3.1.6|[CVE-2025-27516](https://avd.aquasec.com/nvd/cve-2025-27516)|\n\nJinja is an extensible templating engine. Prior to 3.1.6, an oversight in how the Jinja sandboxed environment interacts with the |attr filter allows an attacker that controls the content of a template to execute arbitrary Python code. To exploit the vulnerability, an attacker needs to control the content of a template. Whether that is the case depends on the type of application using Jinja. This vulnerability impacts users of applications which execute untrusted templates. Jinja's sandbox does catch calls to str.format and ensures they don't escape the sandbox. However, it's possible to use the |attr filter to get a reference to a string's plain format method, bypassing the sandbox. After the fix, the |attr filter no longer bypasses the environment's attribute lookup. This vulnerability is fixed in 3.1.6."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-25285",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "octokit/endpoint: @octokit/endpoint has a Regular Expression in parse that Leads to ReDoS Vulnerability Due to Catastrophic Backtracking"
+              },
+              "fullDescription": {
+                "text": "@octokit/endpoint turns REST API endpoints into generic request options. Starting in version 4.1.0 and prior to version 10.1.3, by crafting specific `options` parameters, the `endpoint.parse(options)` call can be triggered, leading to a regular expression denial-of-service (ReDoS) attack. This causes the program to hang and results in high CPU utilization. The issue occurs in the `parse` function within the `parse.ts` file of the npm package `@octokit/endpoint`. Version 10.1.3 contains a patch for the issue."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-25285",
+              "help": {
+                "text": "Vulnerability CVE-2025-25285\nSeverity: MEDIUM\nPackage: @octokit/endpoint\nFixed Version: 9.0.6, 10.1.3\nLink: [CVE-2025-25285](https://avd.aquasec.com/nvd/cve-2025-25285)\n@octokit/endpoint turns REST API endpoints into generic request options. Starting in version 4.1.0 and prior to version 10.1.3, by crafting specific `options` parameters, the `endpoint.parse(options)` call can be triggered, leading to a regular expression denial-of-service (ReDoS) attack. This causes the program to hang and results in high CPU utilization. The issue occurs in the `parse` function within the `parse.ts` file of the npm package `@octokit/endpoint`. Version 10.1.3 contains a patch for the issue.",
+                "markdown": "**Vulnerability CVE-2025-25285**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|@octokit/endpoint|9.0.6, 10.1.3|[CVE-2025-25285](https://avd.aquasec.com/nvd/cve-2025-25285)|\n\n@octokit/endpoint turns REST API endpoints into generic request options. Starting in version 4.1.0 and prior to version 10.1.3, by crafting specific `options` parameters, the `endpoint.parse(options)` call can be triggered, leading to a regular expression denial-of-service (ReDoS) attack. This causes the program to hang and results in high CPU utilization. The issue occurs in the `parse` function within the `parse.ts` file of the npm package `@octokit/endpoint`. Version 10.1.3 contains a patch for the issue."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-25288",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "octokit/plugin-paginate-rest: @octokit/plugin-paginate-rest has a Regular Expression in iterator that Leads to ReDoS Vulnerability Due to Catastrophic Backtracking"
+              },
+              "fullDescription": {
+                "text": "@octokit/plugin-paginate-rest is the Octokit plugin to paginate REST API endpoint responses. For versions starting in 1.0.0 and prior to 11.4.1 of the npm package `@octokit/plugin-paginate-rest`, when calling `octokit.paginate.iterator()`, a specially crafted `octokit` instance—particularly with a malicious `link` parameter in the `headers` section of the `request`—can trigger a ReDoS attack. Version 11.4.1 contains a fix for the issue."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-25288",
+              "help": {
+                "text": "Vulnerability CVE-2025-25288\nSeverity: MEDIUM\nPackage: @octokit/plugin-paginate-rest\nFixed Version: 11.4.1, 9.2.2\nLink: [CVE-2025-25288](https://avd.aquasec.com/nvd/cve-2025-25288)\n@octokit/plugin-paginate-rest is the Octokit plugin to paginate REST API endpoint responses. For versions starting in 1.0.0 and prior to 11.4.1 of the npm package `@octokit/plugin-paginate-rest`, when calling `octokit.paginate.iterator()`, a specially crafted `octokit` instance—particularly with a malicious `link` parameter in the `headers` section of the `request`—can trigger a ReDoS attack. Version 11.4.1 contains a fix for the issue.",
+                "markdown": "**Vulnerability CVE-2025-25288**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|@octokit/plugin-paginate-rest|11.4.1, 9.2.2|[CVE-2025-25288](https://avd.aquasec.com/nvd/cve-2025-25288)|\n\n@octokit/plugin-paginate-rest is the Octokit plugin to paginate REST API endpoint responses. For versions starting in 1.0.0 and prior to 11.4.1 of the npm package `@octokit/plugin-paginate-rest`, when calling `octokit.paginate.iterator()`, a specially crafted `octokit` instance—particularly with a malicious `link` parameter in the `headers` section of the `request`—can trigger a ReDoS attack. Version 11.4.1 contains a fix for the issue."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-25290",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "octokit/request: @octokit/request has a Regular Expression in fetchWrapper that Leads to ReDoS Vulnerability Due to Catastrophic Backtracking"
+              },
+              "fullDescription": {
+                "text": "@octokit/request sends parameterized requests to GitHub’s APIs with sensible defaults in browsers and Node. Starting in version 1.0.0 and prior to version 9.2.1, the regular expression `/\u003c([^\u003e]+)\u003e; rel=\"deprecation\"/` used to match the `link` header in HTTP responses is vulnerable to a ReDoS (Regular Expression Denial of Service) attack. This vulnerability arises due to the unbounded nature of the regex's matching behavior, which can lead to catastrophic backtracking when processing specially crafted input. An attacker could exploit this flaw by sending a malicious `link` header, resulting in excessive CPU usage and potentially causing the server to become unresponsive, impacting service availability. Version 9.2.1 fixes the issue."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-25290",
+              "help": {
+                "text": "Vulnerability CVE-2025-25290\nSeverity: MEDIUM\nPackage: @octokit/request\nFixed Version: 9.2.1, 8.4.1\nLink: [CVE-2025-25290](https://avd.aquasec.com/nvd/cve-2025-25290)\n@octokit/request sends parameterized requests to GitHub’s APIs with sensible defaults in browsers and Node. Starting in version 1.0.0 and prior to version 9.2.1, the regular expression `/\u003c([^\u003e]+)\u003e; rel=\"deprecation\"/` used to match the `link` header in HTTP responses is vulnerable to a ReDoS (Regular Expression Denial of Service) attack. This vulnerability arises due to the unbounded nature of the regex's matching behavior, which can lead to catastrophic backtracking when processing specially crafted input. An attacker could exploit this flaw by sending a malicious `link` header, resulting in excessive CPU usage and potentially causing the server to become unresponsive, impacting service availability. Version 9.2.1 fixes the issue.",
+                "markdown": "**Vulnerability CVE-2025-25290**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|@octokit/request|9.2.1, 8.4.1|[CVE-2025-25290](https://avd.aquasec.com/nvd/cve-2025-25290)|\n\n@octokit/request sends parameterized requests to GitHub’s APIs with sensible defaults in browsers and Node. Starting in version 1.0.0 and prior to version 9.2.1, the regular expression `/\u003c([^\u003e]+)\u003e; rel=\"deprecation\"/` used to match the `link` header in HTTP responses is vulnerable to a ReDoS (Regular Expression Denial of Service) attack. This vulnerability arises due to the unbounded nature of the regex's matching behavior, which can lead to catastrophic backtracking when processing specially crafted input. An attacker could exploit this flaw by sending a malicious `link` header, resulting in excessive CPU usage and potentially causing the server to become unresponsive, impacting service availability. Version 9.2.1 fixes the issue."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-25289",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "@octokit/request-error: @octokit/request-error has a Regular Expression in index that Leads to ReDoS Vulnerability Due to Catastrophic Backtracking"
+              },
+              "fullDescription": {
+                "text": "@octokit/request-error is an error class for Octokit request errors. Starting in version 1.0.0 and prior to version 6.1.7, a Regular Expression Denial of Service (ReDoS) vulnerability exists in the processing of HTTP request headers. By sending an authorization header containing an excessively long sequence of spaces followed by a newline and \"@\", an attacker can exploit inefficient regular expression processing, leading to excessive resource consumption. This can significantly degrade server performance or cause a denial-of-service (DoS) condition, impacting availability. Version 6.1.7 contains a fix for the issue."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-25289",
+              "help": {
+                "text": "Vulnerability CVE-2025-25289\nSeverity: MEDIUM\nPackage: @octokit/request-error\nFixed Version: 5.1.1, 6.1.7\nLink: [CVE-2025-25289](https://avd.aquasec.com/nvd/cve-2025-25289)\n@octokit/request-error is an error class for Octokit request errors. Starting in version 1.0.0 and prior to version 6.1.7, a Regular Expression Denial of Service (ReDoS) vulnerability exists in the processing of HTTP request headers. By sending an authorization header containing an excessively long sequence of spaces followed by a newline and \"@\", an attacker can exploit inefficient regular expression processing, leading to excessive resource consumption. This can significantly degrade server performance or cause a denial-of-service (DoS) condition, impacting availability. Version 6.1.7 contains a fix for the issue.",
+                "markdown": "**Vulnerability CVE-2025-25289**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|@octokit/request-error|5.1.1, 6.1.7|[CVE-2025-25289](https://avd.aquasec.com/nvd/cve-2025-25289)|\n\n@octokit/request-error is an error class for Octokit request errors. Starting in version 1.0.0 and prior to version 6.1.7, a Regular Expression Denial of Service (ReDoS) vulnerability exists in the processing of HTTP request headers. By sending an authorization header containing an excessively long sequence of spaces followed by a newline and \"@\", an attacker can exploit inefficient regular expression processing, leading to excessive resource consumption. This can significantly degrade server performance or cause a denial-of-service (DoS) condition, impacting availability. Version 6.1.7 contains a fix for the issue."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-47764",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "cookie: cookie accepts cookie name, path, and domain with out of bounds characters"
+              },
+              "fullDescription": {
+                "text": "cookie is a basic HTTP cookie parser and serializer for HTTP servers. The cookie name could be used to set other fields of the cookie, resulting in an unexpected cookie value. A similar escape can be used for path and domain, which could be abused to alter other fields of the cookie. Upgrade to 0.7.0, which updates the validation for name, path, and domain."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-47764",
+              "help": {
+                "text": "Vulnerability CVE-2024-47764\nSeverity: LOW\nPackage: cookie\nFixed Version: 0.7.0\nLink: [CVE-2024-47764](https://avd.aquasec.com/nvd/cve-2024-47764)\ncookie is a basic HTTP cookie parser and serializer for HTTP servers. The cookie name could be used to set other fields of the cookie, resulting in an unexpected cookie value. A similar escape can be used for path and domain, which could be abused to alter other fields of the cookie. Upgrade to 0.7.0, which updates the validation for name, path, and domain.",
+                "markdown": "**Vulnerability CVE-2024-47764**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|cookie|0.7.0|[CVE-2024-47764](https://avd.aquasec.com/nvd/cve-2024-47764)|\n\ncookie is a basic HTTP cookie parser and serializer for HTTP servers. The cookie name could be used to set other fields of the cookie, resulting in an unexpected cookie value. A similar escape can be used for path and domain, which could be abused to alter other fields of the cookie. Upgrade to 0.7.0, which updates the validation for name, path, and domain."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-55565",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "nanoid: nanoid mishandles non-integer values"
+              },
+              "fullDescription": {
+                "text": "nanoid (aka Nano ID) before 5.0.9 mishandles non-integer values. 3.3.8 is also a fixed version."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-55565",
+              "help": {
+                "text": "Vulnerability CVE-2024-55565\nSeverity: MEDIUM\nPackage: nanoid\nFixed Version: 5.0.9, 3.3.8\nLink: [CVE-2024-55565](https://avd.aquasec.com/nvd/cve-2024-55565)\nnanoid (aka Nano ID) before 5.0.9 mishandles non-integer values. 3.3.8 is also a fixed version.",
+                "markdown": "**Vulnerability CVE-2024-55565**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|nanoid|5.0.9, 3.3.8|[CVE-2024-55565](https://avd.aquasec.com/nvd/cve-2024-55565)|\n\nnanoid (aka Nano ID) before 5.0.9 mishandles non-integer values. 3.3.8 is also a fixed version."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "4.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-22150",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "undici: Undici Uses Insufficiently Random Values"
+              },
+              "fullDescription": {
+                "text": "Undici is an HTTP/1.1 client. Starting in version 4.5.0 and prior to versions 5.28.5, 6.21.1, and 7.2.3, undici uses `Math.random()` to choose the boundary for a multipart/form-data request. It is known that the output of `Math.random()` can be predicted if several of its generated values are known. If there is a mechanism in an app that sends multipart requests to an attacker-controlled website, they can use this to leak the necessary values. Therefore, an attacker can tamper with the requests going to the backend APIs if certain conditions are met. This is fixed in versions 5.28.5, 6.21.1, and 7.2.3. As a workaround, do not issue multipart requests to attacker controlled servers."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-22150",
+              "help": {
+                "text": "Vulnerability CVE-2025-22150\nSeverity: MEDIUM\nPackage: undici\nFixed Version: 5.28.5, 6.21.1, 7.2.3\nLink: [CVE-2025-22150](https://avd.aquasec.com/nvd/cve-2025-22150)\nUndici is an HTTP/1.1 client. Starting in version 4.5.0 and prior to versions 5.28.5, 6.21.1, and 7.2.3, undici uses `Math.random()` to choose the boundary for a multipart/form-data request. It is known that the output of `Math.random()` can be predicted if several of its generated values are known. If there is a mechanism in an app that sends multipart requests to an attacker-controlled website, they can use this to leak the necessary values. Therefore, an attacker can tamper with the requests going to the backend APIs if certain conditions are met. This is fixed in versions 5.28.5, 6.21.1, and 7.2.3. As a workaround, do not issue multipart requests to attacker controlled servers.",
+                "markdown": "**Vulnerability CVE-2025-22150**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|undici|5.28.5, 6.21.1, 7.2.3|[CVE-2025-22150](https://avd.aquasec.com/nvd/cve-2025-22150)|\n\nUndici is an HTTP/1.1 client. Starting in version 4.5.0 and prior to versions 5.28.5, 6.21.1, and 7.2.3, undici uses `Math.random()` to choose the boundary for a multipart/form-data request. It is known that the output of `Math.random()` can be predicted if several of its generated values are known. If there is a mechanism in an app that sends multipart requests to an attacker-controlled website, they can use this to leak the necessary values. Therefore, an attacker can tamper with the requests going to the backend APIs if certain conditions are met. This is fixed in versions 5.28.5, 6.21.1, and 7.2.3. As a workaround, do not issue multipart requests to attacker controlled servers."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "6.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2025-47279",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "undici: Undici Memory Leak with Invalid Certificates"
+              },
+              "fullDescription": {
+                "text": "Undici is an HTTP/1.1 client for Node.js. Prior to versions 5.29.0, 6.21.2, and 7.5.0, applications that use undici to implement a webhook-like system are vulnerable. If the attacker set up a server with an invalid certificate, and they can force the application to call the webhook repeatedly, then they can cause a memory leak. This has been patched in versions 5.29.0, 6.21.2, and 7.5.0. As a workaound, avoid calling a webhook repeatedly if the webhook fails."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2025-47279",
+              "help": {
+                "text": "Vulnerability CVE-2025-47279\nSeverity: LOW\nPackage: undici\nFixed Version: 5.29.0, 6.21.2, 7.5.0\nLink: [CVE-2025-47279](https://avd.aquasec.com/nvd/cve-2025-47279)\nUndici is an HTTP/1.1 client for Node.js. Prior to versions 5.29.0, 6.21.2, and 7.5.0, applications that use undici to implement a webhook-like system are vulnerable. If the attacker set up a server with an invalid certificate, and they can force the application to call the webhook repeatedly, then they can cause a memory leak. This has been patched in versions 5.29.0, 6.21.2, and 7.5.0. As a workaound, avoid calling a webhook repeatedly if the webhook fails.",
+                "markdown": "**Vulnerability CVE-2025-47279**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|undici|5.29.0, 6.21.2, 7.5.0|[CVE-2025-47279](https://avd.aquasec.com/nvd/cve-2025-47279)|\n\nUndici is an HTTP/1.1 client for Node.js. Prior to versions 5.29.0, 6.21.2, and 7.5.0, applications that use undici to implement a webhook-like system are vulnerable. If the attacker set up a server with an invalid certificate, and they can force the application to call the webhook repeatedly, then they can cause a memory leak. This has been patched in versions 5.29.0, 6.21.2, and 7.5.0. As a workaound, avoid calling a webhook repeatedly if the webhook fails."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "3.1",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "LOW"
+                ]
+              }
+            }
+          ],
+          "version": "0.61.1"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2024-56201",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: jinja2\nInstalled Version: 3.1.4\nVulnerability CVE-2024-56201\nSeverity: MEDIUM\nFixed Version: 3.1.5\nLink: [CVE-2024-56201](https://avd.aquasec.com/nvd/cve-2024-56201)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docs/poetry.lock",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "docs/poetry.lock: jinja2@3.1.4"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-56326",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: jinja2\nInstalled Version: 3.1.4\nVulnerability CVE-2024-56326\nSeverity: MEDIUM\nFixed Version: 3.1.5\nLink: [CVE-2024-56326](https://avd.aquasec.com/nvd/cve-2024-56326)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docs/poetry.lock",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "docs/poetry.lock: jinja2@3.1.4"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-27516",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: jinja2\nInstalled Version: 3.1.4\nVulnerability CVE-2025-27516\nSeverity: MEDIUM\nFixed Version: 3.1.6\nLink: [CVE-2025-27516](https://avd.aquasec.com/nvd/cve-2025-27516)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docs/poetry.lock",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "docs/poetry.lock: jinja2@3.1.4"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-25285",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: @octokit/endpoint\nInstalled Version: 10.1.1\nVulnerability CVE-2025-25285\nSeverity: MEDIUM\nFixed Version: 9.0.6, 10.1.3\nLink: [CVE-2025-25285](https://avd.aquasec.com/nvd/cve-2025-25285)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: @octokit/endpoint@10.1.1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-25288",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: @octokit/plugin-paginate-rest\nInstalled Version: 11.3.6\nVulnerability CVE-2025-25288\nSeverity: MEDIUM\nFixed Version: 11.4.1, 9.2.2\nLink: [CVE-2025-25288](https://avd.aquasec.com/nvd/cve-2025-25288)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: @octokit/plugin-paginate-rest@11.3.6"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-25290",
+          "ruleIndex": 5,
+          "level": "warning",
+          "message": {
+            "text": "Package: @octokit/request\nInstalled Version: 9.1.3\nVulnerability CVE-2025-25290\nSeverity: MEDIUM\nFixed Version: 9.2.1, 8.4.1\nLink: [CVE-2025-25290](https://avd.aquasec.com/nvd/cve-2025-25290)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: @octokit/request@9.1.3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-25289",
+          "ruleIndex": 6,
+          "level": "warning",
+          "message": {
+            "text": "Package: @octokit/request-error\nInstalled Version: 6.1.5\nVulnerability CVE-2025-25289\nSeverity: MEDIUM\nFixed Version: 5.1.1, 6.1.7\nLink: [CVE-2025-25289](https://avd.aquasec.com/nvd/cve-2025-25289)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: @octokit/request-error@6.1.5"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-47764",
+          "ruleIndex": 7,
+          "level": "note",
+          "message": {
+            "text": "Package: cookie\nInstalled Version: 0.6.0\nVulnerability CVE-2024-47764\nSeverity: LOW\nFixed Version: 0.7.0\nLink: [CVE-2024-47764](https://avd.aquasec.com/nvd/cve-2024-47764)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: cookie@0.6.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-55565",
+          "ruleIndex": 8,
+          "level": "warning",
+          "message": {
+            "text": "Package: nanoid\nInstalled Version: 3.3.6\nVulnerability CVE-2024-55565\nSeverity: MEDIUM\nFixed Version: 5.0.9, 3.3.8\nLink: [CVE-2024-55565](https://avd.aquasec.com/nvd/cve-2024-55565)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: nanoid@3.3.6"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-22150",
+          "ruleIndex": 9,
+          "level": "warning",
+          "message": {
+            "text": "Package: undici\nInstalled Version: 6.21.0\nVulnerability CVE-2025-22150\nSeverity: MEDIUM\nFixed Version: 5.28.5, 6.21.1, 7.2.3\nLink: [CVE-2025-22150](https://avd.aquasec.com/nvd/cve-2025-22150)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: undici@6.21.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2025-47279",
+          "ruleIndex": 10,
+          "level": "note",
+          "message": {
+            "text": "Package: undici\nInstalled Version: 6.21.0\nVulnerability CVE-2025-47279\nSeverity: LOW\nFixed Version: 5.29.0, 6.21.2, 7.5.0\nLink: [CVE-2025-47279](https://avd.aquasec.com/nvd/cve-2025-47279)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "pnpm-lock.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "pnpm-lock.yaml: undici@6.21.0"
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///home/runner/work/bolt.diy/bolt.diy/"
+        }
+      }
+    }
+  ]
+}
